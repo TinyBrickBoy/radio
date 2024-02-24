@@ -1,4 +1,4 @@
-var audio = new Audio('http://onthepixel.stream.laut.fm/onthepixel');
+var audio = new Audio('https://onthepixel.stream.laut.fm/onthepixel');
 var isPlaying = false;
 function toggleAudio() {
   if (isPlaying) {
