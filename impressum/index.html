@@ -3,25 +3,12 @@
 
 <head>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Impressum</title>
-  <style>
-    html, body {
-      height: 100%;
-    }
-    body {
-      display: flex;
-      flex-direction: column;
-    }
-    footer {
-      margin-top: auto;
-    }
-  </style>
 </head>
 
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100 flex flex-col min-h-screen font-sans">
 
   <!-- Header -->
   <header class="bg-gray-900 py-4 text-white">
@@ -31,39 +18,53 @@
   </header>
 
   <!-- Main Content -->
-  <section class="container mx-auto mt-8 px-4 flex-grow">
+  <main class="container mx-auto flex-grow mt-8 px-4">
+    <div class="space-y-6">
 
-    <!-- Angaben gemäß § 5 TMG -->
-    <div x-data="{ open: false }" class="mb-6">
-      <h2 @click="open = !open" class="text-xl font-semibold cursor-pointer">
-        Angaben gemäß § 5 TMG
-        <i :class="open ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="ml-2"></i>
-      </h2>
-      <div x-show="open" class="mt-2 transition-all duration-300">
-        <p>Leo Scherr<br>
-          c/o Block Services<br>
-          Stuttgarter Str. 106<br>
-          70736 Fellbach</p>
+      <!-- Section: Angaben gemäß § 5 TMG -->
+      <section>
+        <h2 class="text-xl font-semibold mb-2">Angaben gemäß § 5 TMG</h2>
+        <div>
+          <p>Leo Scherr<br>c/o Block Services<br>Stuttgarter Str. 106<br>70736 Fellbach</p>
+        </div>
+      </section>
+
+      <!-- Section: Kontakt -->
+      <section>
+        <h2 class="text-xl font-semibold mb-2">Kontakt</h2>
+        <div>
+          <p>Telefon: +49 170 1850492<br>E-Mail: tbb@onthepixel.net</p>
+        </div>
+      </section>
+
+      <!-- Dropdown Sections -->
+      <div x-data="{ open: false }">
+        <section>
+          <button @click="open = !open" class="w-full text-left py-2 px-4 bg-gray-200 hover:bg-gray-300 rounded">
+            Haftungsausschluss
+          </button>
+          <div x-show="open" class="mt-2">
+            <h3 class="text-lg font-semibold">Haftung für Inhalte</h3>
+            <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt...</p>
+          </div>
+        </section>
       </div>
-    </div>
 
-    <!-- Kontakt -->
-    <div x-data="{ open: false }" class="mb-6">
-      <h2 @click="open = !open" class="text-xl font-semibold cursor-pointer">
-        Kontakt
-        <i :class="open ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="ml-2"></i>
-      </h2>
-      <div x-show="open" class="mt-2 transition-all duration-300">
-        <p>Telefon: +49 170 1850492<br>
-          E-Mail: tbb@onthepixel.net</p>
+      <div x-data="{ open: false }">
+        <section>
+          <button @click="open = !open" class="w-full text-left py-2 px-4 bg-gray-200 hover:bg-gray-300 rounded">
+            Urheberrecht
+          </button>
+          <div x-show="open" class="mt-2">
+            <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke...</p>
+          </div>
+        </section>
       </div>
-    </div>
 
-    <!-- Weitere Inhalte -->
-    <h2 class="text-xl font-semibold mt-8 mb-4">Haftungsausschluss</h2>
-    <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen...</p>
-    <!-- Weitere Abschnitte folgen hier -->
-  </section>
+      <!-- Weitere Abschnitte ähnlich hinzufügen -->
+
+    </div>
+  </main>
 
   <!-- Footer -->
   <footer class="bg-gray-900 py-4 text-white">
@@ -72,7 +73,8 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2" defer></script>
+  <!-- Alpine.js for Dropdown -->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.5.0/dist/cdn.min.js"></script>
 </body>
 
 </html>
