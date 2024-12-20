@@ -3,80 +3,76 @@
 
 <head>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.12.0/cdn.min.js" defer></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Impressum</title>
+  <style>
+    html, body {
+      height: 100%;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+    footer {
+      margin-top: auto;
+    }
+  </style>
 </head>
 
 <body class="bg-gray-100 font-sans">
 
   <!-- Header -->
-  <header class="bg-gray-900 text-white py-4">
-    <div class="container mx-auto px-4">
-      <h1 class="text-2xl font-semibold text-center">Impressum</h1>
+  <header class="bg-gray-900 py-4 text-white">
+    <div class="container mx-auto text-center">
+      <h1 class="text-2xl font-semibold">Impressum</h1>
     </div>
   </header>
 
-  <!-- Main Section -->
-  <main class="container mx-auto mt-8 px-4 space-y-6">
+  <!-- Main Content -->
+  <section class="container mx-auto mt-8 px-4 flex-grow">
 
-    <!-- Dropdown 1 -->
-    <section x-data="{ open: false }" class="bg-white shadow-lg rounded-lg">
-      <button @click="open = !open" class="w-full text-left px-6 py-4 bg-gray-200 hover:bg-gray-300 rounded-t-lg">
-        <h2 class="text-xl font-semibold">Angaben gemäß § 5 TMG</h2>
-      </button>
-      <div x-show="open" x-transition class="px-6 py-4">
+    <!-- Angaben gemäß § 5 TMG -->
+    <div x-data="{ open: false }" class="mb-6">
+      <h2 @click="open = !open" class="text-xl font-semibold cursor-pointer">
+        Angaben gemäß § 5 TMG
+        <i :class="open ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="ml-2"></i>
+      </h2>
+      <div x-show="open" class="mt-2 transition-all duration-300">
         <p>Leo Scherr<br>
           c/o Block Services<br>
           Stuttgarter Str. 106<br>
           70736 Fellbach</p>
       </div>
-    </section>
+    </div>
 
-    <!-- Dropdown 2 -->
-    <section x-data="{ open: false }" class="bg-white shadow-lg rounded-lg">
-      <button @click="open = !open" class="w-full text-left px-6 py-4 bg-gray-200 hover:bg-gray-300 rounded-t-lg">
-        <h2 class="text-xl font-semibold">Kontakt</h2>
-      </button>
-      <div x-show="open" x-transition class="px-6 py-4">
+    <!-- Kontakt -->
+    <div x-data="{ open: false }" class="mb-6">
+      <h2 @click="open = !open" class="text-xl font-semibold cursor-pointer">
+        Kontakt
+        <i :class="open ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="ml-2"></i>
+      </h2>
+      <div x-show="open" class="mt-2 transition-all duration-300">
         <p>Telefon: +49 170 1850492<br>
           E-Mail: tbb@onthepixel.net</p>
       </div>
-    </section>
+    </div>
 
-    <!-- Dropdown 3 -->
-    <section x-data="{ open: false }" class="bg-white shadow-lg rounded-lg">
-      <button @click="open = !open" class="w-full text-left px-6 py-4 bg-gray-200 hover:bg-gray-300 rounded-t-lg">
-        <h2 class="text-xl font-semibold">Haftungsausschluss</h2>
-      </button>
-      <div x-show="open" x-transition class="px-6 py-4">
-        <h3 class="text-lg font-semibold mt-2">Haftung für Inhalte</h3>
-        <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität ...</p>
-        <h3 class="text-lg font-semibold mt-4">Haftung für Links</h3>
-        <p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben ...</p>
-      </div>
-    </section>
-
-    <!-- Weitere Dropdowns -->
-    <section x-data="{ open: false }" class="bg-white shadow-lg rounded-lg">
-      <button @click="open = !open" class="w-full text-left px-6 py-4 bg-gray-200 hover:bg-gray-300 rounded-t-lg">
-        <h2 class="text-xl font-semibold">Urheberrecht</h2>
-      </button>
-      <div x-show="open" x-transition class="px-6 py-4">
-        <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht ...</p>
-      </div>
-    </section>
-
-  </main>
+    <!-- Weitere Inhalte -->
+    <h2 class="text-xl font-semibold mt-8 mb-4">Haftungsausschluss</h2>
+    <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen...</p>
+    <!-- Weitere Abschnitte folgen hier -->
+  </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-4 mt-8">
+  <footer class="bg-gray-900 py-4 text-white">
     <div class="container mx-auto text-center">
       <p>&copy; 2024 OnThePixel Radio - Alle Rechte vorbehalten.</p>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2" defer></script>
 </body>
 
 </html>
