@@ -1,57 +1,77 @@
 <!DOCTYPE html>
 <html lang="de">
 
-  <head>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OnThePixel Radio</title>
-  </head>
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.12.0/cdn.min.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum</title>
+</head>
 
 <body class="bg-gray-100 font-sans">
 
-  <header class="bg-gray-900 py-4 text-white">
-    <div class="container mx-auto text-center">
-      <h1 class="text-2xl font-semibold">Impressum</h1>
+  <!-- Header -->
+  <header class="bg-gray-900 text-white py-4">
+    <div class="container mx-auto px-4">
+      <h1 class="text-2xl font-semibold text-center">Impressum</h1>
     </div>
   </header>
 
-  <section class="container mx-auto mt-8 px-4">
-    <h2 class="text-xl font-semibold mb-4">Angaben gemäß § 5 TMG</h2>
-    <p>Leo Scherr<br>
-      c/o Block Services<br>
-      Stuttgarter Str. 106<br>
-      70736 Fellbach</p>
+  <!-- Main Section -->
+  <main class="container mx-auto mt-8 px-4 space-y-6">
 
-    <h2 class="text-xl font-semibold mt-8 mb-4">Kontakt</h2>
-    <p>Telefon: +49 170 1850492<br>
-      E-Mail: tbb@onthepixel.net</p>
+    <!-- Dropdown 1 -->
+    <section x-data="{ open: false }" class="bg-white shadow-lg rounded-lg">
+      <button @click="open = !open" class="w-full text-left px-6 py-4 bg-gray-200 hover:bg-gray-300 rounded-t-lg">
+        <h2 class="text-xl font-semibold">Angaben gemäß § 5 TMG</h2>
+      </button>
+      <div x-show="open" x-transition class="px-6 py-4">
+        <p>Leo Scherr<br>
+          c/o Block Services<br>
+          Stuttgarter Str. 106<br>
+          70736 Fellbach</p>
+      </div>
+    </section>
 
-    <h2 class="text-xl font-semibold mt-8 mb-4">Haftungsausschluss</h2>
-    <h3 class="text-lg font-semibold mt-4 mb-2">Haftung für Inhalte</h3>
-    <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+    <!-- Dropdown 2 -->
+    <section x-data="{ open: false }" class="bg-white shadow-lg rounded-lg">
+      <button @click="open = !open" class="w-full text-left px-6 py-4 bg-gray-200 hover:bg-gray-300 rounded-t-lg">
+        <h2 class="text-xl font-semibold">Kontakt</h2>
+      </button>
+      <div x-show="open" x-transition class="px-6 py-4">
+        <p>Telefon: +49 170 1850492<br>
+          E-Mail: tbb@onthepixel.net</p>
+      </div>
+    </section>
 
-    <h3 class="text-lg font-semibold mt-4 mb-2">Haftung für Links</h3>
-    <p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+    <!-- Dropdown 3 -->
+    <section x-data="{ open: false }" class="bg-white shadow-lg rounded-lg">
+      <button @click="open = !open" class="w-full text-left px-6 py-4 bg-gray-200 hover:bg-gray-300 rounded-t-lg">
+        <h2 class="text-xl font-semibold">Haftungsausschluss</h2>
+      </button>
+      <div x-show="open" x-transition class="px-6 py-4">
+        <h3 class="text-lg font-semibold mt-2">Haftung für Inhalte</h3>
+        <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität ...</p>
+        <h3 class="text-lg font-semibold mt-4">Haftung für Links</h3>
+        <p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben ...</p>
+      </div>
+    </section>
 
-    <h3 class="text-lg font-semibold mt-4 mb-2">Urheberrecht</h3>
-    <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
+    <!-- Weitere Dropdowns -->
+    <section x-data="{ open: false }" class="bg-white shadow-lg rounded-lg">
+      <button @click="open = !open" class="w-full text-left px-6 py-4 bg-gray-200 hover:bg-gray-300 rounded-t-lg">
+        <h2 class="text-xl font-semibold">Urheberrecht</h2>
+      </button>
+      <div x-show="open" x-transition class="px-6 py-4">
+        <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht ...</p>
+      </div>
+    </section>
 
-    <h2 class="text-xl font-semibold mt-8 mb-4">Datenschutz</h2>
-    <p>Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder eMail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben. Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich. Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.</p>
+  </main>
 
-    <h2 class="text-xl font-semibold mt-8 mb-4">Google Analytics</h2>
-    <p>Diese Website benutzt Google Analytics, einen Webanalysedienst der Google Inc. (''Google''). Google Analytics verwendet sog. ''Cookies'', Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglicht. Die durch den Cookie erzeugten Informationen über Ihre Benutzung dieser Website (einschließlich Ihrer IP-Adresse) wird an einen Server von Google in den USA übertragen und dort gespeichert. Google wird diese Informationen benutzen, um Ihre Nutzung der Website auszuwerten, um Reports über die Websiteaktivitäten für die Websitebetreiber zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen zu erbringen. Auch wird Google diese Informationen gegebenenfalls an Dritte übertragen, sofern dies gesetzlich vorgeschrieben oder soweit Dritte diese Daten im Auftrag von Google verarbeiten. Google wird in keinem Fall Ihre IP-Adresse mit anderen Daten der Google in Verbindung bringen. Sie können die Installation der Cookies durch eine entsprechende Einstellung Ihrer Browser Software verhindern; wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website voll umfänglich nutzen können. Durch die Nutzung dieser Website erklären Sie sich mit der Bearbeitung der über Sie erhobenen Daten durch Google in der zuvor beschriebenen Art und Weise und zu dem zuvor benannten Zweck einverstanden.</p>
-
-    <h2 class="text-xl font-semibold mt-8 mb-4">Google AdSense</h2>
-    <p>Diese Website benutzt Google Adsense, einen Webanzeigendienst der Google Inc., USA (''Google''). Google Adsense verwendet sog. ''Cookies'' (Textdateien), die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglicht. Google Adsense verwendet auch sog. ''Web Beacons'' (kleine unsichtbare Grafiken) zur Sammlung von Informationen. Durch die Verwendung des Web Beacons können einfache Aktionen wie der Besucherverkehr auf der Webseite aufgezeichnet und gesammelt werden. Die durch den Cookie und/oder Web Beacon erzeugten Informationen über Ihre Benutzung dieser Website (einschließlich Ihrer IP-Adresse) werden an einen Server von Google in den USA übertragen und dort gespeichert. Google wird diese Informationen benutzen, um Ihre Nutzung der Website im Hinblick auf die Anzeigen auszuwerten, um Reports über die Websiteaktivitäten und Anzeigen für die Websitebetreiber zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen zu erbringen. Auch wird Google diese Informationen gegebenenfalls an Dritte übertragen, sofern dies gesetzlich vorgeschrieben oder soweit Dritte diese Daten im Auftrag von Google verarbeiten. Google wird in keinem Fall Ihre IP-Adresse mit anderen Daten der Google in Verbindung bringen. Das Speichern von Cookies auf Ihrer Festplatte und die Anzeige von Web Beacons können Sie verhindern, indem Sie in Ihren Browser-Einstellungen ''keine Cookies akzeptieren'' wählen (Im MS Internet-Explorer unter ''Extras > Internetoptionen > Datenschutz > Einstellung''; im Firefox unter ''Extras > Einstellungen > Datenschutz > Cookies''); wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website voll umfänglich nutzen können. Durch die Nutzung dieser Website erklären Sie sich mit der Bearbeitung der über Sie erhobenen Daten durch Google in der zuvor beschriebenen Art und Weise und zu dem zuvor benannten Zweck einverstanden.</p>
-
-    <p>Impressum vom Impressum Generator der Kanzlei Hasselbach, Frankfurt</p>
-  </section>
-
-  <footer class="bg-gray-900 py-8 text-white mt-auto">
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-4 mt-8">
     <div class="container mx-auto text-center">
       <p>&copy; 2024 OnThePixel Radio - Alle Rechte vorbehalten.</p>
     </div>
