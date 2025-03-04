@@ -2,82 +2,67 @@
 <html lang="en">
 
 <head>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link href="styles.css" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OnThePixel Radio</title>
-  <title>OnThePixel Radio</title>
   <meta name="description" content="Enjoy a wide range of music genres played around the clock.">
-  <meta property="og:url" content="https://db95bd46-89d1-4062-ac45-2a7544edf164-00-31g6bme3p1fxn.riker.replit.dev">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="OnThePixel Radio">
-  <meta property="og:description" content="Enjoy a wide range of music genres played around the clock.">
   <meta property="og:image" content="/static/img/logo.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta property="twitter:domain" content="db95bd46-89d1-4062-ac45-2a7544edf164-00-31g6bme3p1fxn.riker.replit.dev">
-  <meta property="twitter:url" content="https://db95bd46-89d1-4062-ac45-2a7544edf164-00-31g6bme3p1fxn.riker.replit.dev">
-  <meta name="twitter:title" content="OnThePixel Radio">
-  <meta name="twitter:description" content="Enjoy a wide range of music genres played around the clock.">
   <meta name="twitter:image" content="/static/img/logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.0.0/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <script defer src="script.js"></script>
 </head>
 
-<body class="bg-gray-100 font-sans flex flex-col min-h-screen">
-  <section class="py-20 bg-gradient-to-r from-indigo-700 to-blue-500 text-center text-white flex-1">
-    <div class="container mx-auto">
-      <h2 class="text-4xl font-semibold mb-4 text-animation">Welcome to OnThePixel Radio</h2>
-      <p class="text-lg mb-8">The best music, curated by our experts just for you.</p>
-      <div class="play-button" onclick="toggleAudio()">
-        <i class="fas fa-play"></i>
-      </div>
-      <a href="https://laut.fm/onthepixel">Radio by LautFM</a>
-    </div>
-  </section>
-  <section class="py-16 bg-gray-100">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-semibold mb-8 text-center">Our Features</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div
-          class="bg-white rounded-lg p-6 shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
-          <i class="fas fa-music text-3xl text-indigo-500 mb-4"></i>
+<body class="bg-gray-900 text-white font-sans flex flex-col min-h-screen">
+  <header class="bg-gradient-to-r from-indigo-600 to-blue-500 py-6 text-center">
+    <h1 class="text-4xl font-bold">OnThePixel Radio</h1>
+    <p class="text-lg mt-2">The best music, curated by our experts just for you.</p>
+  </header>
+
+  <main class="flex-1 flex flex-col items-center justify-center text-center py-16 px-4">
+    <button class="bg-white text-indigo-600 px-6 py-3 rounded-full shadow-lg text-xl font-semibold hover:bg-indigo-100 transition-all duration-300" onclick="toggleAudio()">
+      <i class="fas fa-play mr-2"></i> Listen Now
+    </button>
+    <a href="https://laut.fm/onthepixel" class="mt-4 text-indigo-400 hover:underline">Radio by LautFM</a>
+  </main>
+
+  <section class="py-16 bg-gray-800">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-8">Our Features</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-gray-700 p-6 rounded-lg shadow-md text-center">
+          <i class="fas fa-music text-4xl text-indigo-400 mb-4"></i>
           <h3 class="text-xl font-semibold mb-2">Diverse Music</h3>
-          <p class="text-gray-700">Enjoy a wide range of music genres played around the clock.</p>
+          <p>Enjoy a wide range of music genres played around the clock.</p>
         </div>
-        <div
-          class="bg-white rounded-lg p-6 shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
-          <i class="fas fa-headphones text-3xl text-indigo-500 mb-4"></i>
+        <div class="bg-gray-700 p-6 rounded-lg shadow-md text-center">
+          <i class="fas fa-headphones text-4xl text-indigo-400 mb-4"></i>
           <h3 class="text-xl font-semibold mb-2">High Audio Quality</h3>
-          <p class="text-gray-700">Experience clear and powerful sound with our high-quality audio technology.</p>
+          <p>Experience clear and powerful sound with our high-quality audio technology.</p>
         </div>
-        <div
-          class="bg-white rounded-lg p-6 shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
-          <i class="fas fa-users text-3xl text-indigo-500 mb-4"></i>
+        <div class="bg-gray-700 p-6 rounded-lg shadow-md text-center">
+          <i class="fas fa-users text-4xl text-indigo-400 mb-4"></i>
           <h3 class="text-xl font-semibold mb-2">Community</h3>
-          <p class="text-gray-700">Join our friendly <a href="https://discord.onthepixel.net"
-              class="text-indigo-500 hover:underline">Discord</a> community and make new friends.</p>
+          <p>Join our friendly <a href="https://discord.onthepixel.net" class="text-indigo-400 hover:underline">Discord</a> community.</p>
         </div>
       </div>
     </div>
   </section>
-  <footer class="bg-gray-900 py-8 text-white mt-auto">
-    <div class="container mx-auto text-center">
-      <p>&copy;
-        <script>document.write(new Date().getFullYear())</script> OnThePixel Radio - All rights reserved.
-      </p>
-      <ul class="flex justify-center mt-4">
-        <li><a href="/impressum/" class="text-white hover:text-gray-400 mx-3">Impressum</a></li>
-        <li><a href="https://twitter.com/onthepixelnet" class="text-white hover:text-gray-400 mx-3"><i
-              class="fab fa-twitter"></i></a></li>
-        <li><a href="https://youtube.com/@thebestminecraftserver" class="text-white hover:text-gray-400 mx-3"><i
-              class="fab fa-youtube"></i></a></li>
-        <li><a href="https://discord.onthepixel.net" class="text-white hover:text-gray-400 mx-3"><i
-              class="fab fa-discord"></i></a></li>
-        <li><a href="instagram.com/onthepixelnet" class="text-white hover:text-gray-400 mx-3"><i class="fab fa-instagram"></i></a></li>
-      </ul>
+
+  <footer class="bg-gray-900 py-8 text-center">
+    <p>&copy; <span id="year"></span> OnThePixel Radio - All rights reserved.</p>
+    <div class="mt-4 space-x-4">
+      <a href="/impressum/" class="hover:text-gray-400">Impressum</a>
+      <a href="https://twitter.com/onthepixelnet" class="hover:text-gray-400"><i class="fab fa-twitter"></i></a>
+      <a href="https://youtube.com/@thebestminecraftserver" class="hover:text-gray-400"><i class="fab fa-youtube"></i></a>
+      <a href="https://discord.onthepixel.net" class="hover:text-gray-400"><i class="fab fa-discord"></i></a>
+      <a href="https://instagram.com/onthepixelnet" class="hover:text-gray-400"><i class="fab fa-instagram"></i></a>
     </div>
   </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
-<script src="script.js" type="text/javascript"></script>
 
 </html>
