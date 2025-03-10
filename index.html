@@ -11,57 +11,188 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <script defer src="script.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              primary: '#4f46e5',
+              secondary: '#818cf8',
+              dark: '#1e1b4b',
+            }
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          }
+        }
+      }
+    }
+  </script>
 </head>
 
-<body class="bg-gray-900 text-white font-sans flex flex-col min-h-screen">
-  <header class="bg-gradient-to-r from-indigo-600 to-blue-500 py-6 text-center">
-    <h1 class="text-4xl font-bold">OnThePixel Radio</h1>
-    <p class="text-lg mt-2">The best music, curated by our experts just for you.</p>
+<body class="bg-gradient-to-b from-gray-900 to-gray-800 text-white font-sans flex flex-col min-h-screen">
+  <!-- Navigation -->
+  <nav class="bg-gray-900 bg-opacity-90 backdrop-blur-md fixed w-full z-50 border-b border-gray-800">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center justify-center">
+          <i class="fas fa-broadcast-tower text-white"></i>
+        </div>
+        <span class="font-bold text-xl">OnThePixel</span>
+      </div>
+      <div class="hidden md:flex space-x-6">
+        <a href="#features" class="hover:text-indigo-400 transition-colors">Features</a>
+        <a href="#listen" class="hover:text-indigo-400 transition-colors">Listen Now</a>
+        <a href="https://discord.onthepixel.net" class="hover:text-indigo-400 transition-colors">Community</a>
+      </div>
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="text-white focus:outline-none">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-800 p-4 border-b border-gray-700">
+      <div class="flex flex-col space-y-3">
+        <a href="#features" class="hover:text-indigo-400 transition-colors">Features</a>
+        <a href="#listen" class="hover:text-indigo-400 transition-colors">Listen Now</a>
+        <a href="https://discord.onthepixel.net" class="hover:text-indigo-400 transition-colors">Community</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="pt-24 pb-16 md:pt-32 md:pb-24 px-4">
+    <div class="container mx-auto text-center max-w-4xl">
+      <div class="mb-6 inline-block">
+        <span class="bg-indigo-600 bg-opacity-20 text-indigo-300 px-4 py-1 rounded-full text-sm font-medium">24/7 Online Radio</span>
+      </div>
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-500">OnThePixel Radio</h1>
+      <p class="text-xl md:text-2xl mb-10 text-gray-300 max-w-2xl mx-auto">The best music experience, curated by experts just for you.</p>
+      
+      <div id="listen" class="relative mb-16">
+        <!-- Audio Player -->
+        <div class="bg-gray-800 bg-opacity-70 backdrop-blur-md rounded-xl p-6 shadow-lg border border-gray-700 max-w-xl mx-auto">
+          <div class="flex flex-col items-center">
+            <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center justify-center mb-4 hover:shadow-lg hover:shadow-indigo-500/40 transition-all cursor-pointer animate-pulse-slow" onclick="toggleAudio()">
+              <i id="play-icon" class="fas fa-play text-xl md:text-2xl"></i>
+            </div>
+            <h3 class="text-xl md:text-2xl font-semibold mb-2">Now Playing</h3>
+            <p class="text-gray-400 text-center">Click play to start listening to the best curated music</p>
+            <div class="mt-4 flex items-center justify-center space-x-3">
+              <div class="text-xs px-2 py-1 rounded bg-indigo-900 text-indigo-300">LIVE</div>
+              <a href="https://laut.fm/onthepixel" target="_blank" class="text-indigo-400 hover:underline text-sm">Powered by LautFM</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <main class="flex-1 flex flex-col items-center justify-center text-center py-16 px-4">
-    <button class="bg-white text-indigo-600 px-6 py-3 rounded-full shadow-lg text-xl font-semibold hover:bg-indigo-100 transition-all duration-300" onclick="toggleAudio()">
-      <i class="fas fa-play mr-2"></i> Listen Now
-    </button>
-    <a href="https://laut.fm/onthepixel" class="mt-4 text-indigo-400 hover:underline">Radio by LautFM</a>
-  </main>
-
-  <section class="py-16 bg-gray-800">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-8">Our Features</h2>
+  <!-- Features Section -->
+  <section id="features" class="py-16 md:py-24 bg-gray-800 bg-opacity-50">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <span class="inline-block px-3 py-1 bg-indigo-900 bg-opacity-40 text-indigo-300 rounded-full text-sm font-medium mb-3">WHY CHOOSE US</span>
+        <h2 class="text-3xl md:text-4xl font-bold">Features That Set Us Apart</h2>
+        <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Experience the best radio streaming with our premium features designed for music lovers.</p>
+      </div>
+      
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-gray-700 p-6 rounded-lg shadow-md text-center">
-          <i class="fas fa-music text-4xl text-indigo-400 mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Diverse Music</h3>
-          <p>Enjoy a wide range of music genres played around the clock.</p>
+        <div class="bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-700 hover:border-indigo-500 transition-all hover:shadow-indigo-500/10 group">
+          <div class="w-14 h-14 rounded-lg bg-indigo-600 bg-opacity-20 flex items-center justify-center mb-5 group-hover:bg-indigo-600 transition-colors">
+            <i class="fas fa-music text-2xl text-indigo-400 group-hover:text-white transition-colors"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Diverse Music</h3>
+          <p class="text-gray-400">Enjoy a wide range of music genres played around the clock, carefully selected by our music experts.</p>
         </div>
-        <div class="bg-gray-700 p-6 rounded-lg shadow-md text-center">
-          <i class="fas fa-headphones text-4xl text-indigo-400 mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">High Audio Quality</h3>
-          <p>Experience clear and powerful sound with our high-quality audio technology.</p>
+        
+        <div class="bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-700 hover:border-indigo-500 transition-all hover:shadow-indigo-500/10 group">
+          <div class="w-14 h-14 rounded-lg bg-indigo-600 bg-opacity-20 flex items-center justify-center mb-5 group-hover:bg-indigo-600 transition-colors">
+            <i class="fas fa-headphones text-2xl text-indigo-400 group-hover:text-white transition-colors"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">High Audio Quality</h3>
+          <p class="text-gray-400">Experience clear and powerful sound with our high-fidelity audio technology for ultimate listening pleasure.</p>
         </div>
-        <div class="bg-gray-700 p-6 rounded-lg shadow-md text-center">
-          <i class="fas fa-users text-4xl text-indigo-400 mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Community</h3>
-          <p>Join our friendly <a href="https://discord.onthepixel.net" class="text-indigo-400 hover:underline">Discord</a> community.</p>
+        
+        <div class="bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-700 hover:border-indigo-500 transition-all hover:shadow-indigo-500/10 group">
+          <div class="w-14 h-14 rounded-lg bg-indigo-600 bg-opacity-20 flex items-center justify-center mb-5 group-hover:bg-indigo-600 transition-colors">
+            <i class="fas fa-users text-2xl text-indigo-400 group-hover:text-white transition-colors"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Community</h3>
+          <p class="text-gray-400">Join our friendly <a href="https://discord.onthepixel.net" class="text-indigo-400 hover:underline">Discord</a> community of music enthusiasts and share your passion.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <footer class="bg-gray-900 py-8 text-center">
-    <p>&copy; <span id="year"></span> OnThePixel Radio - All rights reserved.</p>
-    <div class="mt-4 space-x-4">
-      <a href="/impressum/" class="hover:text-gray-400">Impressum</a>
-      <a href="https://twitter.com/onthepixelnet" class="hover:text-gray-400"><i class="fab fa-twitter"></i></a>
-      <a href="https://youtube.com/@thebestminecraftserver" class="hover:text-gray-400"><i class="fab fa-youtube"></i></a>
-      <a href="https://discord.onthepixel.net" class="hover:text-gray-400"><i class="fab fa-discord"></i></a>
-      <a href="https://instagram.com/onthepixelnet" class="hover:text-gray-400"><i class="fab fa-instagram"></i></a>
+  <!-- CTA Section -->
+  <section class="py-16 md:py-24">
+    <div class="container mx-auto px-6 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Enhance Your Music Experience?</h2>
+        <p class="text-xl text-gray-300 mb-8">Join thousands of listeners who enjoy our radio stream every day</p>
+        <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 justify-center">
+          <a href="#listen" class="inline-block px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg font-semibold shadow-lg hover:from-indigo-500 hover:to-purple-500 transition-all hover:shadow-indigo-500/50">
+            Listen Now
+          </a>
+          <a href="https://discord.onthepixel.net" class="inline-block px-8 py-4 bg-gray-800 border border-gray-700 rounded-lg font-semibold hover:border-indigo-400 transition-all">
+            Join Our Community
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 pt-12 pb-8 border-t border-gray-800">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+        <div class="flex items-center mb-6 md:mb-0">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center justify-center mr-3">
+            <i class="fas fa-broadcast-tower text-white"></i>
+          </div>
+          <span class="font-bold text-xl">OnThePixel Radio</span>
+        </div>
+        <div class="flex space-x-6">
+          <a href="https://twitter.com/onthepixelnet" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fab fa-twitter text-xl"></i>
+          </a>
+          <a href="https://youtube.com/@thebestminecraftserver" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fab fa-youtube text-xl"></i>
+          </a>
+          <a href="https://discord.onthepixel.net" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fab fa-discord text-xl"></i>
+          </a>
+          <a href="https://instagram.com/onthepixelnet" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fab fa-instagram text-xl"></i>
+          </a>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-400 mb-4 md:mb-0">&copy; <span id="year"></span> OnThePixel Radio - All rights reserved.</p>
+          <div class="flex space-x-6">
+            <a href="/impressum/" class="text-gray-400 hover:text-white transition-colors">Impressum</a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+          </div>
+        </div>
+      </div>
     </div>
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+    
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
   </script>
 </body>
 
