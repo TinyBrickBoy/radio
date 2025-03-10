@@ -2,87 +2,162 @@
 <html lang="de">
 
 <head>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Impressum</title>
+  <title>Impressum - OnThePixel Radio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              primary: '#4f46e5',
+              secondary: '#818cf8',
+              dark: '#1e1b4b',
+            }
+          }
+        }
+      }
+    }
+  </script>
 </head>
 
-<body class="bg-gradient-to-b from-gray-100 to-gray-200 flex flex-col min-h-screen font-sans text-gray-800">
+<body class="bg-gradient-to-b from-gray-900 to-gray-800 text-white font-sans flex flex-col min-h-screen">
+  <!-- Navigation -->
+  <nav class="bg-gray-900 bg-opacity-90 backdrop-blur-md fixed w-full z-50 border-b border-gray-800">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="/" class="flex items-center space-x-2">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center justify-center">
+          <i class="fas fa-broadcast-tower text-white"></i>
+        </div>
+        <span class="font-bold text-xl">OnThePixel</span>
+      </a>
+      <a href="/" class="text-gray-300 hover:text-white transition-colors">
+        <i class="fas fa-home mr-2"></i>Zurück zur Startseite
+      </a>
+    </div>
+  </nav>
 
   <!-- Header -->
-  <header class="bg-gradient-to-r from-indigo-500 to-purple-600 py-6 shadow-lg">
-    <div class="container mx-auto text-center text-white">
-      <h1 class="text-3xl font-bold">Impressum</h1>
-      <p class="mt-2 text-lg">Transparenz und rechtliche Hinweise</p>
+  <header class="pt-28 pb-12 md:pt-36 md:pb-16">
+    <div class="container mx-auto text-center px-4">
+      <h1 class="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-500">Impressum</h1>
+      <p class="text-xl text-gray-300">Transparenz und rechtliche Hinweise</p>
     </div>
   </header>
 
   <!-- Main Content -->
-  <main class="container mx-auto flex-grow mt-8 px-6">
-    <div class="space-y-8">
+  <main class="container mx-auto flex-grow px-4 pb-16">
+    <div class="max-w-4xl mx-auto space-y-8">
 
       <!-- Section: Angaben gemäß § 5 TMG -->
-      <section class="bg-white shadow-lg rounded-lg p-6">
-        <h2 class="text-2xl font-semibold text-indigo-600 mb-4">Angaben gemäß § 5 TMG</h2>
-        <p class="text-lg leading-relaxed">
-          Leo Scherr<br>
-          c/o Block Services<br>
-          Stuttgarter Str. 106<br>
-          70736 Fellbach
-        </p>
+      <section class="bg-gray-800 rounded-xl p-8 shadow-lg border border-gray-700">
+        <h2 class="text-2xl font-semibold text-indigo-400 mb-6"><i class="fas fa-info-circle mr-3 opacity-70"></i>Angaben gemäß § 5 TMG</h2>
+        <div class="text-gray-300 leading-relaxed">
+          <p class="text-lg">
+            Leo Scherr<br>
+            c/o Block Services<br>
+            Stuttgarter Str. 106<br>
+            70736 Fellbach
+          </p>
+        </div>
       </section>
 
       <!-- Section: Kontakt -->
-      <section class="bg-white shadow-lg rounded-lg p-6">
-        <h2 class="text-2xl font-semibold text-indigo-600 mb-4">Kontakt</h2>
-        <p class="text-lg leading-relaxed">
-          Telefon: +49 170 1850492<br>
-          E-Mail: <a href="mailto:tbb@onthepixel.net" class="text-purple-600 hover:underline">tbb@onthepixel.net</a>
-        </p>
-      </section>
-
-      <!-- Section: Haftungsausschluss -->
-      <section class="bg-white shadow-lg rounded-lg p-6" x-data="{ open: false }">
-        <button @click="open = !open" class="w-full text-left py-3 px-4 bg-indigo-50 hover:bg-indigo-100 rounded-lg transition-colors">
-          <span class="text-lg font-semibold text-indigo-600">Haftungsausschluss</span>
-        </button>
-        <div x-show="open" class="mt-4 text-gray-700" x-transition>
-          <h3 class="text-lg font-semibold mb-2">Haftung für Inhalte</h3>
-          <p class="leading-relaxed">
-            Die Inhalte unserer Seiten wurden mit größter Sorgfalt ausgewählt. Alle Rechte an der Musik werden über laut.fm bezogen. Alle Fotos und anderen Medien auf der Website wurden von uns erstellt.
+      <section class="bg-gray-800 rounded-xl p-8 shadow-lg border border-gray-700">
+        <h2 class="text-2xl font-semibold text-indigo-400 mb-6"><i class="fas fa-envelope mr-3 opacity-70"></i>Kontakt</h2>
+        <div class="text-gray-300 leading-relaxed">
+          <p class="text-lg">
+            Telefon: <a href="tel:+4917001850492" class="text-indigo-300 hover:text-indigo-200 transition-colors">+49 170 1850492</a><br>
+            E-Mail: <a href="mailto:tbb@onthepixel.net" class="text-indigo-300 hover:text-indigo-200 transition-colors">tbb@onthepixel.net</a>
           </p>
         </div>
       </section>
 
-      <!-- Section: Urheberrecht -->
-      <section class="bg-white shadow-lg rounded-lg p-6" x-data="{ open: false }">
-        <button @click="open = !open" class="w-full text-left py-3 px-4 bg-indigo-50 hover:bg-indigo-100 rounded-lg transition-colors">
-          <span class="text-lg font-semibold text-indigo-600">Urheberrecht</span>
-        </button>
-        <div x-show="open" class="mt-4 text-gray-700" x-transition>
-          <p class="leading-relaxed">
-          Unser Radio wird über laut.fm bereitgestellt.</br> 
-          Alle Songs und Inhalte, die über das Radio angeboten werden, unterliegen den Nutzungsbedingungen und dem Urheberrecht von laut.fm.</br>
-          Jegliche Weiterverwendung bedarf der ausdrücklichen Zustimmung von laut.fm oder den jeweiligen Rechteinhabern.
-          </p>
-        </div>
-      </section>
+      <!-- Accordion Sections -->
+      <div class="space-y-4" x-data="{ active: null }">
+        <!-- Section: Haftungsausschluss -->
+        <section class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 overflow-hidden" x-data="{ open: false }">
+          <button @click="open = !open" class="w-full p-6 text-left flex justify-between items-center hover:bg-gray-700 transition-colors">
+            <h2 class="text-2xl font-semibold text-indigo-400 flex items-center">
+              <i class="fas fa-shield-alt mr-3 opacity-70"></i>Haftungsausschluss
+            </h2>
+            <i :class="open ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="text-gray-400"></i>
+          </button>
+          <div x-show="open" x-transition class="px-6 pb-6 text-gray-300">
+            <h3 class="text-xl font-semibold mb-3 text-white">Haftung für Inhalte</h3>
+            <p class="leading-relaxed">
+              Die Inhalte unserer Seiten wurden mit größter Sorgfalt ausgewählt. Alle Rechte an der Musik werden über laut.fm bezogen. Alle Fotos und anderen Medien auf der Website wurden von uns erstellt.
+            </p>
+          </div>
+        </section>
 
-
+        <!-- Section: Urheberrecht -->
+        <section class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 overflow-hidden" x-data="{ open: false }">
+          <button @click="open = !open" class="w-full p-6 text-left flex justify-between items-center hover:bg-gray-700 transition-colors">
+            <h2 class="text-2xl font-semibold text-indigo-400 flex items-center">
+              <i class="fas fa-copyright mr-3 opacity-70"></i>Urheberrecht
+            </h2>
+            <i :class="open ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="text-gray-400"></i>
+          </button>
+          <div x-show="open" x-transition class="px-6 pb-6 text-gray-300">
+            <p class="leading-relaxed">
+              Unser Radio wird über laut.fm bereitgestellt.<br> 
+              Alle Songs und Inhalte, die über das Radio angeboten werden, unterliegen den Nutzungsbedingungen und dem Urheberrecht von laut.fm.<br>
+              Jegliche Weiterverwendung bedarf der ausdrücklichen Zustimmung von laut.fm oder den jeweiligen Rechteinhabern.
+            </p>
+          </div>
+        </section>
+      </div>
     </div>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 py-6 text-white mt-8">
-    <div class="container mx-auto text-center">
-      <p>&copy; 2024 OnThePixel Radio - Alle Rechte vorbehalten.</p>
-      <p class="mt-2 text-sm">Die Inhalte des Radios werden über laut.fm bereitgestellt.</p>
+  <footer class="bg-gray-900 pt-12 pb-8 border-t border-gray-800">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+        <div class="flex items-center mb-6 md:mb-0">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center justify-center mr-3">
+            <i class="fas fa-broadcast-tower text-white"></i>
+          </div>
+          <span class="font-bold text-xl">OnThePixel Radio</span>
+        </div>
+        <div class="flex space-x-6">
+          <a href="https://twitter.com/onthepixelnet" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fab fa-twitter text-xl"></i>
+          </a>
+          <a href="https://youtube.com/@thebestminecraftserver" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fab fa-youtube text-xl"></i>
+          </a>
+          <a href="https://discord.onthepixel.net" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fab fa-discord text-xl"></i>
+          </a>
+          <a href="https://instagram.com/onthepixelnet" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fab fa-instagram text-xl"></i>
+          </a>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-400 mb-4 md:mb-0">&copy; <span id="year"></span> OnThePixel Radio - Alle Rechte vorbehalten.</p>
+          <div class="flex space-x-6">
+            <a href="/impressum/" class="text-indigo-400 hover:text-white transition-colors">Impressum</a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">Datenschutz</a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">Nutzungsbedingungen</a>
+          </div>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <!-- Alpine.js for Dropdown -->
+  <!-- Alpine.js for Accordion -->
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.5.0/dist/cdn.min.js"></script>
+  
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 
 </html>
